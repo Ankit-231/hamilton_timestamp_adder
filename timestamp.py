@@ -54,27 +54,17 @@ timestamp = {"Act I": "00H:00m:49s",
              "Who Lives, Who Dies, Who Tells Your Story": "02H:27m:12s",
              "Credits": "02H:32m:05s"}
 
-timestamp_keys = ['Act I', 'Alexander Hamilton', 'Aaron Burr, Sir', 'My Shot', 'The Story Of Tonight',
-                  'The Schuyler Sisters', 'Farmer Refuted', "You'll Be Back", 'Right-hand Man', "A Winter's Ball",
-                  'Helpless', 'Satisfied', 'The Story of Tonight (Reprise)', 'Wait For It', 'Stay Alive',
-                  'Ten Duel Commandments', 'Meet Me Inside', 'That Would Be Enough', 'Guns and Ships',
-                  'History Has Its Eyes On You', 'Yorktown (The World Turned Upside Down)', 'What Comes Next',
-                  'Dear Theodosia', 'Non-Stop', 'Act II:-', "What'd I Miss", 'Cabinet Battle #1', 'Take A Break',
-                  'Say No To This', 'The Room Where It Happens', 'Schuyler Defeated', 'Cabinet Battle #2',
-                  'Washington On Your Side', 'One Last Time', 'I Know Him', 'The Adams Administration', 'We Know',
-                  'Hurricane', 'The Reynolds Pamphlet', 'Burn', 'Blow Us All Away', 'Stay Alive (Reprise)',
-                  "It's Quiet Uptown", 'Election of 1800', 'Your Obedient Servant', 'Best of Wives and Best of Women',
-                  'The World Was Wide Enough', 'Who Lives, Who Dies, Who Tells Your Story', 'Credits']
 
-timestamp_values = ['00H:00m:49s', '00H:01m:06s', '00H:05m:08s', '00H:07m:42s', '00H:13m:44s', '00H:15m:12s',
-                    '00H:18m:24s', '00H:20m:14s', '00H:24m:11s', '00H:29m:34s', '00H:30m:43s', '00H:34m:59s',
-                    '00H:40m:39s', '00H:42m:36s', '00H:45m:57s', '00H:48m:37s', '00H:50m:24s', '00H:51m:53s',
-                    '00H:54m:48s', '00H:57m:01s', '00H:58m:44s', '01H:03m:13s', '01H:05m:01s', '01H:08m:59s',
-                    '1H:16m:30s', '01H:16m:35s', '01H:20m:39s', '01H:24m:30s', '01H:29m:21s', '01H:33m:30s',
-                    '01H:39m:02s', '01H:40m:05s', '01H:42m:29s', '01H:45m:31s', '01H:50m:55s', '01H:52m:53s',
-                    '01H:53m:49s', '01H:56m:17s', '01H:58m:48s', '02H:00m:57s', '02H:04m:52s', '02H:07m:48s',
-                    '02H:09m:52s', '02H:14m:31s', '02H:18m:33s', '02H:21m:03s', '02H:21m:54s', '02H:27m:12s',
-                    '02H:32m:05s']
+def getList(dicti):
+    li = []
+    for key in dicti.keys():
+        li.append(key)
+    return li
+
+
+timestamp_keys = getList(timestamp)
+
+timestamp_values = list(timestamp.values())
 
 screen = pygame.display.set_mode((800, 600))
 
@@ -100,4 +90,3 @@ while running:
                     pc.copy(timestamp_values[c])
                     print(timestamp_values[c])
                     c += 1
-
